@@ -23,7 +23,7 @@ def dgc_loss(input: Tensor, target: Tensor, mask_diagonal: Tensor = None, k: flo
     mask_diagonal = ~ torch.eye(sm.shape[0]).bool()
     ranking = sm[mask_diagonal].view(sm.shape[0], sm.shape[0]-1)
 
-d    # Ground-truth Ranking function
+    # Ground-truth Ranking function
     gt = torch.abs(target.unsqueeze(0) - target.unsqueeze(1)).float()
     #gt = gt[mask_diagonal].view(sm.shape[0], sm.shape[0]-1)
 
